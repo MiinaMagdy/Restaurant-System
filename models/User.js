@@ -28,6 +28,11 @@ const userSchema = mongoose.Schema({
         enum: ["admin", "chef", "staff", "delivery", "client"],
         default: "client"
     },
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'undefined'],
+        default: 'undefined'
+    },
     phone: {
         type: String,
         trim: true,
@@ -37,12 +42,7 @@ const userSchema = mongoose.Schema({
         type: String,
         trim: true,
         maxLength: [100, "Address is up to 100 chars long"]
-    },
-    gender: {
-        type: String,
-        enum: ['male', 'female', 'undefined'],
-        default: 'undefined'
-    },
+    }
     // TODO: avatar as binary data GridFS: https://www.mongodb.com/docs/manual/core/gridfs/
 }, { timestamps: true } );
 
