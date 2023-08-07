@@ -4,6 +4,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+// Secret key
+const key = process.env.JWT_SECRET
+
 // Model
 const User = require("../models/User");
 
@@ -14,7 +17,7 @@ const login = async (req, res) => {
         if (!user) return sendResponse(res, 400, "User not found");
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: "Wrong password" });
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+        const token = jwt.sign({ id: user._id }, key, { expiresIn: "1d" });
         return sendResponse(res, 200, "Login successfully", { user, token });
     } catch (err) {
         return sendResponse(res, 500, err.message);
@@ -32,7 +35,7 @@ const register = async (req, res) => {
 
         req.body.password = await bcrypt.hash(req.body.password, 10);
         const user = await new User(req.body).save();
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+        const token = jwt.sign({ id: user._id }, key, { expiresIn: "1d" });
         return sendResponse(res, 200, "Register successfully", { user, token });
     } catch (err) {
         return sendResponse(res, 500, err.message);
@@ -50,8 +53,26 @@ const getUser = async (req, res) => {
     }
 }
 
-const getAllUsers = async (req, res) => {
+const getMyProfile = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user)
+            return sendResponse(res, 400, "No such user id found");
+        return sendResponse(res, 200, "Get user successfully", user);
+    } catch (err) {
+        return sendResponse(res, 500, err.message);
+    }
+}
 
+const getAllUsers = async (req, res) => {
+    try {
+        const users = await User.find({});
+        if (!users || users.length === 0)
+            return sendResponse(res, 400, "No users found");
+        return sendResponse(res, 200, "Get all users successfully", users);
+    } catch (err) {
+        return sendResponse(res, 500, err.message);
+    }
 }
 
 const createUser = async (req, res) => {
@@ -67,4 +88,4 @@ const deleteUser = async (req, res) => {
 }
 
 // Export
-module.exports = { login, register, getUser, getAllUsers, createUser, updateUser, deleteUser };
+module.exports = { login, register, getUser, getMyProfile, getAllUsers, createUser, updateUser, deleteUser };

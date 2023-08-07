@@ -28,6 +28,10 @@ const userSchema = mongoose.Schema({
         enum: ["admin", "chef", "staff", "delivery", "client"],
         default: "client"
     },
+    activated: {
+        type: Boolean,
+        default: false
+    },
     gender: {
         type: String,
         enum: ['male', 'female', 'undefined'],
@@ -45,6 +49,14 @@ const userSchema = mongoose.Schema({
     }
     // TODO: avatar as binary data GridFS: https://www.mongodb.com/docs/manual/core/gridfs/
 }, { timestamps: true } );
+
+userSchema.pre('save', function (next) {
+    // 'this' refers to the current document being saved
+    if (this.role !== 'client') {
+      this.activated = true;
+    }
+    next();
+});
 
 const User = mongoose.model("User", userSchema);
 
