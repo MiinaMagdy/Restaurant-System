@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+// Body parser
+app.use(express.json())
+
 // Connection to MongoDB
 require("./connection/mongoose")
 
