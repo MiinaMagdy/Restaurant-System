@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!--Main templates CSS file-->
+    <link rel="stylesheet" href="../public/CSS/style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="../public/CSS/all.min.css">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fa-solid fa-utensils"></i> Restoran</h1>
+            </div>
+        </div>
+    </div>
+    <!--End Header-->
+
+    <!--Login-->
+    <div class="login">
+        <div class="container">
+            <div class="log">
+                <h3>Login</h3>
+            </div>
+            <!--Form-->
+            <div class="form">
+                <form method="POST">
+                    <div class="input">
+                        <label for="email"> Email</label>
+                        <input type="email" id="email" placeholder="ong@email.com" required>
+                    </div>
+                    <div class="input">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter Password" required>
+                    </div>
+                    <div class="button">
+                        <input type="submit" name="Login" value="Login">
+                        <input type="reset" name="Reset" value="Reset">
+                    </div>
+                    <div class="input input-link">
+                        <p>Don't have an account? <a href="signup.html">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
