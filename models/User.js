@@ -21,7 +21,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, "Password is required"],
         minLength: [6, "Password is at least 6 chars long"],
-        match: [/^\S+$/, "Password is invalid"] // no whitespace allowed
+        match: [/^\S+$/, "Password is invalid (no whitespace allowed)"] // no whitespace allowed
     },
     role: {
         type: String,
@@ -46,17 +46,13 @@ const userSchema = mongoose.Schema({
         type: String,
         trim: true,
         maxLength: [100, "Address is up to 100 chars long"]
+    },
+    // TODO: avatar
+    avatar: {
+        type: String,
+        default: "defaultAvatar.png"
     }
-    // TODO: avatar as binary data GridFS: https://www.mongodb.com/docs/manual/core/gridfs/
 }, { timestamps: true } );
-
-userSchema.pre('save', function (next) {
-    // 'this' refers to the current document being saved
-    if (this.role !== 'client') {
-      this.activated = true;
-    }
-    next();
-});
 
 const User = mongoose.model("User", userSchema);
 
