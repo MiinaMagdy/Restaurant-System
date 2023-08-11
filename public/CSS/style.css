@@ -1,0 +1,231 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Global Variables */
+:root {
+    --primary: #FEA116;
+    --light: #F1F8FF;
+    --dark: #0F172B;
+}
+/* Container */
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*Small*/
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+/*Medium*/
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/*Large*/
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+/*Body background*/
+body{
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../images/bg-hero.jpg);
+    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    
+}
+/*Logo design*/
+.logo{
+    color: var(--primary);
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.logo h1{
+    font-weight: 900;
+}
+
+/*Login design*/
+.login .container, .signup .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px; 
+    background-color: var(--light);
+}
+.login .container h3, .signup .container h3{
+    color: var(--dark);
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 3px;
+}
+/*form design*/
+.signup .form .container form{
+    margin-left: -35px;
+}
+.login .container .form .input, .signup .container .form .input{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 20px;
+    justify-content: center;
+    margin: 20px;
+    font-size: 25px;
+}
+.login .container .form .input input, .signup .container .form .input input{
+    width: 125%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    font-size: 15px;
+}
+.login .container .form .input label, .signup .container .form .input label, .signup .container .form .radio label{
+    font-size: 29px;
+    text-align: center;
+    width: 242px;
+}
+.login .container .form .button, .signup .container .form .button{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 20px;
+}
+.login .container .form .button input, .signup .container .form .button input {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--light);
+    font-size: 21px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 3px;
+    cursor: pointer;
+    width: 150px;
+}
+.signup .container .form .button input {
+    margin-bottom: 20px;
+}
+.login .container .form .input-link{
+    margin-left: 60px;
+}
+.login .container .form .input-link a{
+    color: #213c80;
+}
+.signup .container .form .radio{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    margin: 20px;
+    font-size: 25px;
+    width: 200px;
+}
+.signup .container .form .radio input{
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    font-size: 15px;
+}
+.signup .container .form .radio .label1{
+    display: grid;
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-around;
+    width: 50px;
+    margin-top: 7px;
+}
+.signup .container .form .radio .gender, .signup .container .form .radio .role{
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    width: 50px;
+    
+}
+.signup .container .form .radio .gender input, .signup .container .form .radio .role input{
+    margin-left: 23px;
+    margin-right: 16px;
+    margin-top: 3px;
+}
+/*mobile*/
+@media (max-width: 767px){
+    .logo{
+        font-size: 20px;
+        margin-left: 30px;
+    }
+    .login .container, .signup .container  {
+        width: 358px;
+        font-size: 10px;
+    }
+    .login .container h3, .signup .container h3{
+        font-size: 25px;
+    }
+    .login .container .form .input label, .signup .container .form .input label, .signup .container .form .radio label{
+        font-size: 15px;
+    }
+    .login .container .form .input, .signup .container .form .input, .login .container .form .input label, .signup .container .form .input label{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        grid-gap: 0;
+        font-size: 15px;
+        margin-left: 5px;
+        align-items: center;
+    }
+    .signup .container .form .radio{
+        margin-left: 65px;
+    }
+    .signup .container .form .radio .label1{
+        font-size: 12px;
+    }
+    .signup .container .form .radio label{
+        width: 100%;
+        display: flex;
+        font-size: 15px;
+        align-items: center;
+    }
+    .signup .container .form .radio label .label1{
+        justify-content: center;
+    }
+    .signup .container .form .radio .gender input, .signup .container .form .radio .role input{
+        margin-top: 5px;
+        margin-right: 9px;
+    }
+    .login .container .form .button input, .signup .container .form .button input {
+        width: 120px;
+        font-size: 15px;
+    }
+    .login .container .form .input-link{
+        font-size: 15px;
+    }
+}
