@@ -5,12 +5,12 @@ const app = express();
 app.use(express.static('public'));
 
 // // Including Morgan Package
-// const morgan = require("morgan")
-// app.use(morgan("dev"))
+const morgan = require("morgan")
+app.use(morgan("dev"))
 
 // // Including Cors Package
-// const cors = require("cors")
-// app.use(cors())
+const cors = require("cors")
+app.use(cors())
 
 // Setting up the bodyParser
 const bodyParser = require("body-parser")

@@ -108,6 +108,12 @@ body{
     text-align: center;
     width: 242px;
 }
+.login .container .form .error, .signup .container .form .error {
+    display: none;
+    color: red;
+    text-align: center;
+    font-size: 18px;
+}
 .login .container .form .button, .signup .container .form .button{
     display: flex;
     justify-content: space-evenly;

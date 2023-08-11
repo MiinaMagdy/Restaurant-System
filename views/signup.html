@@ -15,6 +15,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../public/JS/register.js"></script>
 </head>
 
 <body>
@@ -37,43 +39,43 @@
             <!--Form-->
             <div class="form">
                 <div class="container">
-                    <form method=" POST">
+                    <form id="signup-form" method="POST">
                         <div class="input">
                             <label for="username">Full Name</label>
-                            <input type="text" id="username" placeholder="Enter Name" required>
+                            <input type="text" name="fullname" id="username" placeholder="Enter Name" required>
                         </div>
                         <div class="input">
                             <label for="email"> Email</label>
-                            <input type="email" id="email" placeholder="ong@email.com" required>
+                            <input type="email" name="email" id="email" placeholder="ong@email.com" required>
                         </div>
                         <div class="input">
                             <label for="password">Password</label>
-                            <input type="password" id="password" placeholder="Enter Password" required>
+                            <input type="password" name="password" id="password" placeholder="Enter Password" required>
                         </div>
                         <div class="input">
                             <label for="confirmpass">Confirm Password</label>
-                            <input type="password" id="confirmpass" placeholder="Confirm Password" required>
+                            <input type="password" name="confirmPassword" id="confirmpass" placeholder="Confirm Password" required>
                         </div>
                         <div class="input">
                             <label for="address">Address</label>
-                            <input type="text" id="address" placeholder="Enter Your Address" required>
+                            <input type="text" name="address" id="address" placeholder="Enter Your Address" required>
                         </div>
                         <div class="input">
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" placeholder="Enter Your Phone Number"
-                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                            <input type="tel" name="phone" id="phone" placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="radio">
                             <label for="gender">Gender</label>
                             <div class="gender">
 
-                                <input type="radio" id="male" name="gender" value="Male" required>
+                                <input type="radio" id="male" name="gender" value="male" required>
                                 <label class="label1" for="male">Male</label>
 
-                                <input type="radio" id="female" name="gender" value="Female" required>
+                                <input type="radio" id="female" name="gender" value="female" required>
                                 <label class="label1" for="female">Female</label>
                             </div>
                         </div>
+                        <p class="error"></p>
                         <div class="button">
                             <input type="submit" name="Register" value="Register">
                             <input type="reset" name="Reset" value="Reset">

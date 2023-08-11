@@ -15,6 +15,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../public/JS/login.js"></script>
 </head>
 
 <body>
@@ -36,15 +38,16 @@
             </div>
             <!--Form-->
             <div class="form">
-                <form method="POST">
+                <form id="login-form" method="POST">
                     <div class="input">
                         <label for="email"> Email</label>
-                        <input type="email" id="email" placeholder="ong@email.com" required>
+                        <input type="email" name="email" id="email" placeholder="ong@email.com" required>
                     </div>
                     <div class="input">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter Password" required>
+                        <input type="password" name="password" id="password" placeholder="Enter Password" required>
                     </div>
+                    <p class="error"></p>
                     <div class="button">
                         <input type="submit" name="Login" value="Login">
                         <input type="reset" name="Reset" value="Reset">
