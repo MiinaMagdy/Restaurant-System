@@ -18,7 +18,7 @@ body {
     background-size: cover;
     font-family: 'Nunito', sans-serif;
     margin: 0;
-
+    overflow: hidden;
 }
 
 /*Logo design*/
@@ -28,10 +28,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .logo h1 {
     font-weight: 900;
 }
+
+
 
 /*Nav design*/
 .nav .contain {
@@ -67,11 +68,13 @@ body {
     color: var(--primary);
 }
 
+
+
 /*image design*/
 .image .container {
     display: flex;
     justify-content: flex-end;
-    padding-top: 90px;
+    padding-top: 50px;
     padding-right: 100px;
     width: auto;
 }
@@ -110,7 +113,7 @@ body {
     line-height: 1.5;
 }
 
-.image .container .text a {
+.image .container .text a:first-of-type {
     display: inline-block;
     font-size: 13px;
     font-weight: 700;
@@ -119,6 +122,21 @@ body {
     border-radius: 0.25rem;
     padding: 0.5rem 1rem;
     border: 2px solid var(--primary);
+}
+.image .container .text a:last-of-type{
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    background-color: var(--primary);
+    color: var(--dark);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    padding: .6rem 1rem;
+    margin-left: 10px;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
 }
 
 .image .container img {
@@ -129,11 +147,19 @@ body {
 @keyframes rotation {
     from {
         transform: rotate(0deg);
-    }
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
 
     to {
         transform: rotate(360deg);
-    }
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
 }
 
 .image .container .ani {
