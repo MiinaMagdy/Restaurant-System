@@ -56,9 +56,6 @@ exports.updateCuisine = async (req, res) => {
     if(!cuisine) {
         return sendResponse(res, 404, `Cuisine not found with id of ${req.params.id}`);
     }
-    if(!req.body.name || !req.body.price || !req.body.category) {
-        return sendResponse(res, 400, `Please provide name, price and category`);
-    }
     const updated = cuisine.set(req.body);
     await updated.save();
 

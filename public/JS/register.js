@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         try {
-            const response = await axios.post('http://localhost:3000/users/register', formObject);
+            const response = await axios.post('http://localhost:3000/api/v1/users/register', formObject);
 
             // Handle the response here (e.g., redirect to another page)
             console.log('Register successful:', response.data);
