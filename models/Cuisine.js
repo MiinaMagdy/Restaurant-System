@@ -15,7 +15,7 @@ const cuisineSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: [true, "Image is Mandatory"],
+        //required: [true, "Image is Mandatory"],
     },
     description: {
         type: String,

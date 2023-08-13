@@ -25,7 +25,9 @@ exports.getCuisines = async (req, res) => {
 exports.getCuisine = async (req, res) => {
     try {
     const cuisine = await Cuisine.findById(req.params.id);
-    
+    if(!cuisine) {
+        return sendResponse(res, 404, `Cuisine not found with id of ${req.params.id}`);
+    }
     sendResponse(res, 200, cuisine);
     } catch (err) {
         return sendResponse(res, 500, err.message);
@@ -71,11 +73,10 @@ exports.updateCuisine = async (req, res) => {
 // @access  Private
 exports.deleteCuisine = async (req, res) => {
     try {
-    const cuisine = await Cuisine.findOne({ _id: req.params.id });
+    const cuisine = await Cuisine.findByIdAndDelete(req.params.id);
     if(!cuisine) {
         return sendResponse(res, 404, `Cuisine not found with id of ${req.params.id}`);
     }
-    cuisine.remove();
 
     sendResponse(res, 200, {});
     } catch (err) {
