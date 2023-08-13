@@ -5,10 +5,10 @@ const router = express.Router();
 // controller
 const cuisineController = require('../controllers/Cuisine');
 // routes
-router.get('/cuisines', cuisineController.getCuisines);
-router.get('/cuisines/:id', cuisineController.getCuisine);
-router.post('/cuisines', cuisineController.createCuisine);
-router.post('/cuisines/:id', cuisineController.updateCuisine);
-router.delete('/cuisines/:id', cuisineController.deleteCuisine);
+router.get('/', cuisineController.getCuisines);
+router.get('/:id', cuisineController.getCuisine);
+router.post('/', cuisineController.createCuisine);
+router.post('/:id', cuisineController.updateCuisine);
+router.delete('/:id', cuisineController.deleteCuisine);
 
 module.exports = router;

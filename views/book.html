@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Table</title>
+    <!--Main templates CSS file-->
+    <link rel="stylesheet" href="../public/CSS/book-style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="../public/CSS/all.min.css">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fa-solid fa-utensils"></i> Restoran</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="chat.html">Chat</a>
+                <a href="book.html">Book</a>
+            </div>
+            <div class="text animated moveInDown">
+                <h3>Booking</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="book animated moveInTop">
+        <div class="container">
+            <h5>Reservation</h5>
+            <h1>Book A Table Online</h1>
+            <form method="post">
+                <label for="order">Special Request</label>
+                <textarea class="tx" type="text" id="order"></textarea>
+
+                <label for="num">Number of Person</label>
+                <select class="select" id="num">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 Person</option>
+                    <option value="3">3 Person</option>
+                    <option value="4">4 Person</option>
+                </select>
+
+                <label for="num">Table No.</label>
+                <p id="num"># </p>
+
+                <label for="price">Total Price</label>
+                <p id="price">$ </p>
+
+                <label for="date">Date & Time</label>
+                <input type="date" id="date">
+
+                <div class="button">
+                    <input type="reset" name="Reset" value="Reset">
+                    <input type="submit" name="Book" value="Book Now">
+                    <a href="menu.html">See Menu</a>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

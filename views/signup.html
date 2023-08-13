@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <!--Main templates CSS file-->
+    <link rel="stylesheet" href="../public/CSS/style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="../public/CSS/all.min.css">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../public/JS/register.js"></script>
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fa-solid fa-utensils"></i> Restoran</h1>
+            </div>
+        </div>
+    </div>
+    <!--End Header-->
+
+    <!--Signup-->
+    <div class="signup">
+        <div class="container">
+            <div class="log">
+                <h3>Register</h3>
+            </div>
+            <!--Form-->
+            <div class="form">
+                <div class="container">
+                    <form id="signup-form" method="POST">
+                        <div class="input">
+                            <label for="username">Full Name</label>
+                            <input type="text" name="fullname" id="username" placeholder="Enter Name" required>
+                        </div>
+                        <div class="input">
+                            <label for="email"> Email</label>
+                            <input type="email" name="email" id="email" placeholder="ong@email.com" required>
+                        </div>
+                        <div class="input">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+                        </div>
+                        <div class="input">
+                            <label for="confirmpass">Confirm Password</label>
+                            <input type="password" name="confirmPassword" id="confirmpass" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="input">
+                            <label for="address">Address</label>
+                            <input type="text" name="address" id="address" placeholder="Enter Your Address" required>
+                        </div>
+                        <div class="input">
+                            <label for="phone">Phone</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Enter Your Phone Number" required>
+                        </div>
+                        <div class="radio">
+                            <label for="gender">Gender</label>
+                            <div class="gender">
+
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label class="label1" for="male">Male</label>
+
+                                <input type="radio" id="female" name="gender" value="female" required>
+                                <label class="label1" for="female">Female</label>
+                            </div>
+                        </div>
+                        <p class="error"></p>
+                        <div class="button">
+                            <input type="submit" name="Register" value="Register">
+                            <input type="reset" name="Reset" value="Reset">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
