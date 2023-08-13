@@ -30,10 +30,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 require("./connection/mongoose")
 
 // Routes
+const cuisineRouter = require("./routes/Cuisine")
 const User = require("./routes/User")
 
 // Injections
-app.use("/users", User);
+app.use('/api/v1/cuisines', cuisineRouter)
+app.use("/api/v1/users", User);
 
 const users = {};
 

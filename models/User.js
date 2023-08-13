@@ -47,7 +47,6 @@ const userSchema = mongoose.Schema({
         trim: true,
         maxLength: [100, "Address is up to 100 chars long"]
     },
-    // TODO: avatar
     avatar: {
         type: String,
         default: "defaultAvatar.png"
