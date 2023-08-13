@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = passwordInput.value;
 
         try {
-            const response = await axios.post('http://localhost:3000/users/login', {
+            const response = await axios.post('http://localhost:3000/api/v1/users/login', {
                 email,
                 password
             });
