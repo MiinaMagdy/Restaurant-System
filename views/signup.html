@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Register</title>
     <!--Main templates CSS file-->
-    <link rel="stylesheet" href="../public/CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <!--Font Awesome-->
-    <link rel="stylesheet" href="../public/CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../public/JS/register.js"></script>
+    <script src="JS/register.js"></script>
 </head>
 
 <body>
@@ -24,7 +24,9 @@
     <div class="header">
         <div class="container">
             <div class="logo">
-                <h1><i class="fa-solid fa-utensils"></i> Restoran</h1>
+                <a href="home.html">
+                    <h1><i class="fa-solid fa-utensils"></i> Restoran</h1>
+                </a>
             </div>
         </div>
     </div>
@@ -54,7 +56,8 @@
                         </div>
                         <div class="input">
                             <label for="confirmpass">Confirm Password</label>
-                            <input type="password" name="confirmPassword" id="confirmpass" placeholder="Confirm Password" required>
+                            <input type="password" name="confirmPassword" id="confirmpass"
+                                placeholder="Confirm Password" required>
                         </div>
                         <div class="input">
                             <label for="address">Address</label>

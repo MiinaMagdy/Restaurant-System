@@ -9,15 +9,23 @@ const io = new Server(server);
 app.use(express.static('public'));
 
 // Serve the chat room page
-app.get('/chat', (req, res) => {
-  res.sendFile(__dirname + '/views/chat.html');
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/views/home.html");
 });
 
-// // Including Morgan Package
+let pages = ['chat', 'login', 'signup', 'book'];
+
+for (let page of pages) {
+    app.get(`/${page}`, (req, res) => {
+        res.sendFile(__dirname + `/views/${page}.html`);
+    });
+}
+
+// Including Morgan Package
 const morgan = require("morgan")
 app.use(morgan("dev"))
 
-// // Including Cors Package
+// Including Cors Package
 const cors = require("cors")
 app.use(cors())
 
