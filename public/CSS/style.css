@@ -47,7 +47,6 @@ body{
 }
 /*Logo design*/
 .logo{
-    color: var(--primary);
     font-size: 30px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -56,7 +55,11 @@ body{
     justify-content: center;
     margin-bottom: 30px;
 }
+.logo a{
+    text-decoration: none;
+}
 .logo h1{
+    color: var(--primary);
     font-weight: 900;
 }
 
