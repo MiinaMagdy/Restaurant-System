@@ -5,16 +5,19 @@ const Cuisine = require('../models/Cuisine');
 const sendResponse = require('../utils/sendResponse');
 
 // Methods
-// @desc    Get all cuisines
-// @route   GET /api/v1/cuisines
+// @desc    Get all cuisines with pagination and price filter
+// @route   GET /api/v1/cuisines?page=1&limit=2&price=100
 // @access  Public
 exports.getCuisines = async (req, res) => {
     try {
-        const cuisines = await Cuisine.find();
-        
-        sendResponse(res, 200, cuisines);
-    }
-    catch (err) {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const skip = (page - 1) * limit;
+        const price = parseInt(req.query.price) || 1000000;
+        const cuisines = await Cuisine.find({ price: { $lte: price } }).skip(skip).limit(limit);
+        const count = await Cuisine.countDocuments({ price: { $lte: price } });
+        sendResponse(res, 200, { cuisines, count });
+    } catch (err) {
         return sendResponse(res, 500, err.message);
     }
 }
