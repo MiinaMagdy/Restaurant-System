@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/home.html");
 });
 
-let pages = ['chat', 'login', 'signup', 'book'];
+let pages = ['chat', 'login', 'signup', 'book', 'menu', 'home', 'dashboard'];
 
 for (let page of pages) {
     app.get(`/${page}`, (req, res) => {
