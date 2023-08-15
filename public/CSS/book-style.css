@@ -36,6 +36,7 @@ body{
     top: 0;
     left: 0;
     background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../images/bg-hero.jpg);
+    background-size: cover;
 }
 .nav .container{
     width: 100%;
@@ -56,6 +57,14 @@ body{
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     transition: all 0.3s ease 0s;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
 }
 .nav .container .nav-menu a:hover{
     color: var(--primary);
@@ -274,13 +283,10 @@ body{
         margin-bottom: -65px;
     }
     .nav .container{
-        gap: 35px;
-        width: 135%;
-        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        justify-content: space-around;
         padding-top: 15px;
-    }
-    .nav .container .logo{
-        margin-left: -115px;
     }
     .nav .container .logo h1{
         font-size: 15px;
@@ -294,7 +300,6 @@ body{
     }  
     .nav .container .text h3{
         font-size: 55px;
-        margin-right: 133px;
         margin-top: 55px;
     }
 

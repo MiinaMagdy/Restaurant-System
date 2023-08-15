@@ -19,12 +19,107 @@
 /* Global Styles */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--dark);
+    background-color: var(--dark); 
     color: var(--light);
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
+
+/*Logo design*/
+.logo {
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.logo h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+/*Nav*/
+.nav .contain {
+    width: 100%;
+    position: relative;
+    display: flex;
+    gap: 520px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: var(--dark);
+    border-bottom: 2px solid var(--primary);
+}
+.nav .contain .nav-menu {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+.nav .contain .nav-menu a {
+    color: var(--light);
+    text-decoration: none;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease 0s;
+}
+.nav .contain .nav-menu a:hover {
+    color: var(--orange);
+}
+/*mobile*/
+@media (max-width: 767px) {
+    .logo h1{
+        font-size: 15px;
+    }
+    .nav .contain{
+        gap: 25px;
+    }
+    .nav .contain .nav-menu{
+        margin-top: -8px;
+    }
+    .nav .contain .nav-menu a {
+        font-size: 11px;
+        padding-left: 2px;
+        padding-right: 0.5rem;
+    }
+}
+
+/*Small*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav .contain {
+        gap: 130px;
+        width: 100%;
+    }
+    .nav .contain .logo h1 {
+        font-size: 30px;
+    }
+
+    .nav .contain .nav-menu a {
+        font-size: 20px;
+        padding: 0.5rem 0.5rem 0.5rem 2px;
+    }
+}
+
+/*Medium*/
+@media (min-width: 992px) and (max-width: 1200px) {
+    .nav .contain {
+        gap: 0;
+        justify-content: space-evenly;
+    }
+
+    .nav .contain .logo h1 {
+        font-size: 30px;
+    }
+
+    .nav .contain .nav-menu a {
+        font-size: 20px;
+        padding: 0.5rem 0.5rem 0.5rem 10px;
+    }
+}
+
+
 
 /* Messages List */
 #messages {
