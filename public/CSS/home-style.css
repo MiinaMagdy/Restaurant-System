@@ -24,11 +24,11 @@ body {
 /*Logo design*/
 .logo {
     color: var(--primary);
-    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 .logo h1 {
+    font-size: 30px;
     font-weight: 900;
 }
 
@@ -42,17 +42,12 @@ body {
     gap: 520px;
     align-items: center;
     justify-content: center;
-    padding-top: 5px;
-    margin-top: -5px;
     background-color: var(--dark);
 }
 
 .nav .contain .nav-menu {
     font-size: 1.25rem;
     font-weight: 700;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
     padding-bottom: 0.5rem;
 }
 
@@ -204,18 +199,11 @@ body {
 /*mobile*/
 @media (max-width: 767px) {
     .nav .contain {
-        gap: 32px;
-        width: 135%;
-        justify-content: center;
-    }
-
-    .nav .contain .logo {
-        margin-left: -115px;
+        gap: 25px;
     }
 
     .nav .contain .logo h1 {
         font-size: 15px;
-
     }
 
     .nav .contain .nav-menu a {
@@ -258,15 +246,15 @@ body {
 @media (min-width: 768px) and (max-width: 991px) {
     .nav .contain {
         gap: 130px;
-        width: 135%;
+        width: 100%;
     }
-
-    .nav .contain .logo {
-        margin-left: -285px;
-    }
-
     .nav .contain .logo h1 {
         font-size: 30px;
+    }
+
+    .nav .contain .nav-menu a {
+        font-size: 20px;
+        padding: 0.5rem 0.5rem 0.5rem 2px;
     }
 
     .nav .contain .nav-menu a {
@@ -305,12 +293,7 @@ body {
 @media (min-width: 992px) and (max-width: 1199px) {
     .nav .contain {
         gap: 0;
-        width: 135%;
         justify-content: space-evenly;
-    }
-
-    .nav .contain .logo {
-        margin-left: -300px;
     }
 
     .nav .contain .logo h1 {
@@ -338,13 +321,9 @@ body {
 
 @media (min-width: 1200px) and (max-width: 1349px) {
     .nav .contain {
-        gap: 0;
-        width: 135%;
+        gap: 185px;
+        width: 100%;
         justify-content: space-evenly;
-    }
-
-    .nav .contain .logo {
-        margin-left: -300px;
     }
 
     .nav .contain .logo h1 {
