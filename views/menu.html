@@ -25,13 +25,19 @@
       <div class="logo">
         <h1><i class="fa-solid fa-utensils"></i> Restoran</h1>
       </div>
-      <div class="nav-menu">
-        <a href="/home">Home</a>
-        <a href="/menu">Menu</a>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/chat">Chat</a>
-        <a href="/book">Book</a>
-      </div>
+      <ul class="nav-menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a class="chat chat-toggle">Chat</a>
+          <ul class="ch">
+            <li><a href="/chat" data-room="1">Staff Chat</a></li>
+            <li><a href="/chat" data-room="2">Client Chat</a></li>
+
+          </ul>
+        </li>
+        <li><a href="/book">Book</a></li>
+      </ul>
       <div class="text animated moveInDown">
         <h3>Our Menu</h3>
       </div>
@@ -39,93 +45,87 @@
   </div>
   <!--End Header-->
 
-
+  <div class="custom-alert" id="customAlert">
+    <div class="alert-content">
+      <p>Chat only available for signed-in users!</p>
+      <button id="closeAlert">Close</button>
+    </div>
+  </div>
 
 
   <!--Menu-->
   <div class="menu">
     <div class="productList">
       <!-- Your product list goes here -->
-      <div class="card">
-        <img src="images/menu-1.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Grilled Chicken</h3>
-          <button class="card-button">Add to Cart</button>
+      <div class="menu">
+        <div class="productList">
+          <!-- Your product list goes here -->
+          <div class="card">
+            <img src="images/menu-1.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Grilled Chicken</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$120.50</p>
+          </div>
+          <div class="card">
+            <img src="images/menu-2.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Chicken Burger</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$160.00</p>
+          </div>
+          <div class="card">
+            <img src="images/menu-3.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Pizza</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$90.00</p>
+          </div>
+          <div class="card">
+            <img src="images/menu-4.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Steak</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$115.99</p>
+          </div>
+          <div class="card">
+            <img src="images/menu-5.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Big Meal</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$190.00</p>
+          </div>
+          <div class="card">
+            <img src="images/menu-6.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Steak & Potato</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$100.50</p>
+          </div>
+          <div class="card">
+            <img src="images/menu-7.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Margarita</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$60.0</p>
+          </div>
+          <div class="card">
+            <img src="images/menu-8.jpg" alt="Product Image">
+            <div class="card-body">
+              <h3 class="card-title">Ribeye Steak</h3>
+              <p>Ipsum ipsum clita erat amet dolor justo diam</p>
+            </div>
+            <p class="card-price">$120.00</p>
+          </div>
         </div>
-        <p class="card-price">$120.50</p>
       </div>
-      <div class="card">
-        <img src="images/menu-2.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Chicken Burger</h3>
-          <button class="card-button">Add to Cart</button>
-        </div>
-        <p class="card-price">$160.00</p>
-      </div>
-      <div class="card">
-        <img src="images/menu-3.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Product Title</h3>
-          <button class="card-button">Add to Cart</button>
-        </div>
-        <p class="card-price">$90.00</p>
-      </div>
-      <div class="card">
-        <img src="images/menu-4.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Product Title</h3>
-          <button class="card-button">Add to Cart</button>
-        </div>
-        <p class="card-price">$115.99</p>
-      </div>
-      <div class="card">
-        <img src="images/menu-5.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Product Title</h3>
-          <button class="card-button">Add to Cart</button>
-        </div>
-        <p class="card-price">$190.00</p>
-      </div>
-      <div class="card">
-        <img src="images/menu-6.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Product Title</h3>
-          <button class="card-button">Add to Cart</button>
-        </div>
-        <p class="card-price">$100.50</p>
-      </div>
-      <div class="card">
-        <img src="images/menu-7.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Pizza</h3>
-          <button class="card-button">Add to Cart</button>
-        </div>
-        <p class="card-price">$60.0</p>
-      </div>
-      <div class="card">
-        <img src="images/menu-8.jpg" alt="Product Image">
-        <div class="card-body">
-          <h3 class="card-title">Ribeye Steak</h3>
-          <button class="card-button">Add to Cart</button>
-        </div>
-        <p class="card-price">$120.00</p>
-      </div>
-    </div>
-    <div class="pay">
-      <form method="post">
-        <h3>Order Details</h3>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" placeholder="Enter your phone" required>
-
-          <label for="address">Address</label>
-          <input type="text" id="address" placeholder="Enter your address" required>
-
-          <label for="price">Total Price</label>
-          <p id="price">$ </p>
-        </div>
-      </form>
-      <button class="pay-button">Order Now</button>
     </div>
   </div>
 
@@ -160,5 +160,6 @@
   </div>
 
 </body>
+<script src="JS/navBar.js"></script>
 
 </html>

@@ -15,6 +15,15 @@ body{
     margin: 0;
 }
 
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
 /*Logo design*/
 .logo{
     height: 50px;
@@ -45,8 +54,9 @@ body{
     justify-content: center;
 }
 .nav .container .nav-menu{
+    display: flex;
     height: 50px;
-    padding-top: 25px;
+    padding-top: 15px;
     font-size: 1.25rem;
     font-weight: 700;
 }
@@ -77,27 +87,137 @@ body{
     font-size: 70px;
     font-weight: 900;
 }
+.nav .container .ch{
+    display: none;
+    position: absolute;
+    background-color: var(--light);
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: -25px;
+    padding: 5px 15px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.nav .ch::before{
+    display: none;
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width:10px;
+    border-color: transparent transparent var(--light) transparent;
+    top: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
 
+.nav .ch li:first-of-type{
+    padding-bottom: 10px;
+}
 
-/*mobile*/
+.nav .nav-menu .ch li a{
+    color: var(--dark);
+    font-size: 15px;
+}
+.nav .nav-menu .ch li a:hover{
+    cursor: pointer;
+}
+
+.nav .nav-menu .ch.active, .nav .nav-menu .ch.active::before{
+    display: block;
+}
+
+/*small*/
 @media (max-width: 786px){
+    .nav{
+        width: 100%;
+        height: 255px;
+    }
     .nav .container{
-        gap: 40px;
+        gap: 0px;
+        width: 100%;
+        justify-content: space-around;
+        padding-top: 15px;
+    }
+    .nav .container .logo h1{
+        font-size: 20px;
     }
     .nav .container .nav-menu{
-        font-size: 13px;
+        font-size: 15px;
+        padding-left: 0;
     }
-    .nav .logo{
-        padding-top: 8px;
-        font-size: 10px;
+    .nav .container .nav-menu a{
+        font-size: 15px;
+        padding: 0.5rem 0.5rem 0.5rem 2px;
+    }  
+    .nav .container .text h3{
+        font-size: 55px;
+        margin-top: 55px;
+    }
+
+    .nav .nav-menu .ch{
+        font-size: 15px;
+        width: max-content;
+        margin-left: -35px;
+        padding: 5px 9px;
+    }
+
+    .nav .ch li:first-of-type{
+        padding-bottom: 5px;
     }
 }
+/*mobile*/
 @media (min-width: 787px) and (max-width: 980px){
+    .nav .container{
+        gap: 45px;
+    }
+    .nav .container .nav-menu{
+        padding-top: 13px;
+        font-size: 21px;
+    }
+    .nav .logo{
+        font-size: 17px;
+    }
+    .nav .nav-menu .ch{
+        /* width: max-content; */
+        margin-left: -50px;
+        padding: 5px 9px;
+    }
+    .nav .nav-menu .ch li a{
+        font-size: 28px;
+    }
+    .nav .ch li:first-of-type{
+        padding-bottom: 10px;
+    }
+
+    .menu{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu .productList .card{
+        flex-basis: 100%;
+    }
+}
+/*Large*/
+@media (min-width: 981px) and (max-width: 1349px){
     .nav .container{
         gap: 200px;
     }
+    .nav .container .nav-menu{
+        font-size: 20px;
+        padding-top: 15px;
+    }
+    .nav .logo{
+        margin-top: -10px;
+        font-size: 20px;
+    }
 }
-
 /*Menu*/
 .menu{
     display: flex;
@@ -113,6 +233,7 @@ body{
 .menu .productList .card{
     display: flex;
     flex-basis:40%;
+    height: 90px;
     gap: 20px;
     margin: 20px 0;
 }
@@ -125,6 +246,14 @@ body{
     font-size: 1.25rem;
     font-weight: 700;
     border-bottom: 1px solid #ccc;
+}
+.menu .productList .card .card-body p{
+    width: 135%;
+    margin-top: 1px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #777;
 }
 .menu .productList .card .card-body .card-button{
     display: flex;
@@ -147,22 +276,8 @@ body{
     font-weight: 900;
     color: var(--primary);
 }
-.menu .pay{
-    flex-basis: 50%;
-    background-color: #A69C94;
-    margin-top: 42px;
-    margin-left: 10px;
-    height: 500px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-/*mobile*/
-@media (max-width: 786px){
-    
-}
+
+/*Small*/
 @media (min-width: 787px) and (max-width: 980px){
     .menu{
         flex-direction: column;
@@ -170,9 +285,6 @@ body{
     }
     .menu .productList .card{
         flex-basis: 100%;
-    }
-    .menu .pay{
-        flex-basis: 80%;
     }
 }
 
@@ -215,4 +327,33 @@ body{
 }
 .mb p{
     text-align: center;
+}
+
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.alert-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#closeAlert {
+    margin-top: 10px;
 }
