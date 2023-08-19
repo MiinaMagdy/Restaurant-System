@@ -18,6 +18,7 @@ const cuisineSchema = new mongoose.Schema({
         //required: [true, "Image is Mandatory"],
     },
     description: {
+        default: "Ipsum ipsum clita erat amet dolor justo diam",
         type: String,
     },
     rate: {
