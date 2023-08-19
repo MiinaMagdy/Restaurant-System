@@ -22,8 +22,10 @@ const userData = {
     whichRoom
 };
 
+
+
 // choosing a room to emit on
-const roomSelection = userRole === 'admin' ? (whichRoom === '1' ? room1 : room2) : (userRole === 'staff' ? room1 : room2);
+const roomSelection = userRole === 'admin' ? (whichRoom === '1' ? room1 : room2) : (['chief', 'staff', 'delivery'].includes(userRole) ? room1 : room2);
 
 socket.emit('new-user', { name: userName, role: userRole, whichRoom });
 

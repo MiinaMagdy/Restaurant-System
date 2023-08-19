@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
       } else if (data.role === 'admin' && data.whichRoom === '2') {
           socket.join(room2);
           socket.broadcast.to(room2).emit('user-connected', data);
-      } else if (data.role === 'staff') {
+      } else if (['chief', 'staff', 'delivery'].includes(data.role)) {
           socket.join(room1);
           socket.broadcast.to(room1).emit('user-connected', data);
       } else if (data.role === 'client') {
@@ -96,7 +96,7 @@ io.on('connection', (socket) => {
             roomToNotify = room1;
         } else if (user.role === 'admin' && user.whichRoom === '2') {
             roomToNotify = room2;
-        } else if (user.role === 'staff') {
+        } else if (['chief', 'staff', 'delivery'].includes(user.role)) {
             roomToNotify = room1;
         } else if (user.role === 'client') {
             roomToNotify = room2;

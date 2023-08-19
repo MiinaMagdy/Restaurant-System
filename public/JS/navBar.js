@@ -12,7 +12,7 @@ closeAlert.addEventListener("click", function() {
 
 if (!userRole) {
     chatSubMenu.style.display = 'none';
-} else if (userRole === 'staff' || userRole === 'client') {
+} else if (['chief', 'staff', 'delivery'].includes(userRole) || userRole === 'client') {
     chatSubMenu.style.display = 'none';
 }
 
@@ -24,7 +24,7 @@ chatToggle.addEventListener("click", function() {
 
     if (userRole === 'admin') {
         chatSubMenu.style.display = (chatSubMenu.style.display === 'none' || chatSubMenu.style.display === '') ? 'block' : 'none';
-    }else if (userRole === 'staff' || userRole === 'client') {
+    }else if (['chief', 'staff', 'delivery'].includes(userRole) || userRole === 'client') {
         window.location.href = "/chat";
         }
     });
