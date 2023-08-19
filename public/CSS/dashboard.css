@@ -1,79 +1,72 @@
+*{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+	max-height: 100%;
+}
 
 :root {
-    --primary: #FEA116;
-    --light: #ffffff;
-    --dark: #0F172B;
-}
-:root {
+    
 	--poppins: 'Poppins', sans-serif;
 	--lato: 'Lato', sans-serif;
-
-	
-	--blue: #3C91E6;
+	--primary: #FEA116;
+    --light: #ffffff;
+    --dark: #0F172B;
 	--light-gray:#fff9f9e1;
 	--grey: #a19d9d;
-	
-	--yellow: #FFCE26;
-	--light-yellow: #FFF2C6;
 	--orange: #FD7238;
 	--light-orange: #FFE0D3;
 }
 
-/* MAIN */
-main {
-    margin: 0;
-	padding: 0;
-	
-	width: 80%;
-	left: 280px;
-	
-    background-color: var(--dark);
-}
-#sidebar.hide ~ main {
-	width: calc(100% - 60px);
-	left: 60px;
-}
-
-
- main {
-	width: 100%;
-	padding: 36px 24px;
-    font-family: 'Nunito', sans-serif;
-	max-height: calc(100vh - 56px);
-	overflow-y: auto;
-}
- main .head-title {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	grid-gap: 16px;
-	flex-wrap: wrap;
-}
+body {
+	overflow-y: auto;background-color: var(--dark);
+ }
  
-main .head-title .left .breadcrumb {
-	display: flex;
-	align-items: center;
-	grid-gap: 16px;
+a {
+	text-decoration:navajowhite;
 }
 
-
- main .head-title .left .breadcrumb li a.active {
-	color: var(--blue);
-	pointer-events: unset;
-}
- main .head-title .btn-download {
-	height: 36px;
-	padding: 0 16px;
-	border-radius: 36px;
-	background: var(--blue);
-	color: var(--light);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	grid-gap: 10px;
-	font-weight: 500;
+li {
+	list-style: none;
 }
 
+/*Nav design*/
+.nav .contain {
+   background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../images/bg-hero.jpg);
+   
+    width: 100%;
+    position: relative;
+    display: flex;
+    gap: 520px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    margin-top: -5px;
+	
+ 
+}
+
+.nav .contain .nav-menu {
+    font-size: 20px;
+    font-weight: 700;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+}
+
+.nav .contain .nav-menu a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease 0s;
+}
 
 
 
@@ -82,6 +75,7 @@ main .head-title .left .breadcrumb {
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	grid-gap: 24px;
 	margin-top: 36px;
+	padding: 10px;
 }
  main .box-info li {
 	padding: 24px;
@@ -118,6 +112,11 @@ main .table-data > div {
 	background: var(--light);
 	padding: 24px;
 	overflow-x: auto;
+	margin:2%;
+	
+	width: 96%;
+	
+
 }
 main .table-data .head {
 	display: flex;
@@ -127,7 +126,7 @@ main .table-data .head {
 }
 main .table-data .head h3 {
 	margin-right: auto;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 600;
 }
 main .table-data .head .bx {
@@ -142,15 +141,17 @@ main .table-data .order table {
 	width: 100%;
 	border-collapse: collapse;
 }
- 
+
  main .table-data .order table td {
-	padding: 16px 0;
+	
+	padding: 20px ;
 }
  main .table-data .order table tr td:first-child {
 	display: flex;
 	align-items: center;
 	grid-gap: 12px;
-	padding-left: 6px;
+	padding-left: 10px;
+	margin: 12px;
 }
 main .table-data .order table td img {
 	width: 36px;
@@ -180,7 +181,9 @@ main .table-data .order table tr td .status.pending {
 main .table-data .task {
 	flex-grow: 4;
 	flex-basis: 300px;
-    margin-top: 16px;
+    margin-top: 24px;
+padding: 20px;
+	
 }
 main .table-data .task .todo-list {
 	width: 80%;
