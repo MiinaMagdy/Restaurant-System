@@ -23,19 +23,35 @@
             <div class="logo">
                 <h1><i class="fa-solid fa-utensils"></i> Restoran</h1>
             </div>
-            <div class="nav-menu">
-                <a href="home">Home</a>
-                <a href="menu">Menu</a>
-                <a href="dashboard">Dashboard</a>
-                <a href="chat">Chat</a>
-                <a href="book">Book</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a class="chat chat-toggle">Chat</a>
+                    <ul class="ch">
+                        <li><a href="/chat" data-room="1">Staff Chat</a></li>
+                        <li><a href="/chat" data-room="2">Client Chat</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/book">Book</a></li>
+            </ul>
             <div class="text animated moveInDown">
                 <h3>Booking</h3>
             </div>
         </div>
     </div>
+    <!--End Header-->
 
+
+    <div class="custom-alert" id="customAlert">
+        <div class="alert-content">
+            <p>Chat only available for signed-in users!</p>
+            <button id="closeAlert">Close</button>
+        </div>
+    </div>
+
+    <!--Book-->
     <div class="book animated moveInTop">
         <div class="container">
             <h5>Reservation</h5>
@@ -72,5 +88,6 @@
         </div>
     </div>
 </body>
+<script src="JS/navBar.js"></script>
 
 </html>
