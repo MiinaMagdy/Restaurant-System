@@ -199,6 +199,11 @@ a{
     width: 595px;
 }
 
+.image .text .hello{
+    margin-top: 20px;
+    color: var(--light);
+}
+
 /*Image Animation*/
 @keyframes rotation {
     from {
@@ -260,17 +265,30 @@ a{
 /*mobile*/
 @media (max-width: 767px) {
     .nav .contain {
-        gap: 25px;
+        gap: 20px;
     }
 
     .nav .contain .logo h1 {
-        font-size: 15px;
+        font-size: 11px;
     }
-
-    .nav .contain .nav-menu a {
+    .nav .contain .nav-menu{
+        padding-left: 0;
+    }
+    .nav .contain .nav-menu li a {
         font-size: 10px;
         padding: 0.5rem 0.5rem 0.5rem 2px;
     }
+
+    .nav .contain .nav-menu .ch{
+        width: max-content;
+        margin-left: -32px;
+    }
+
+    .nav .ch li:first-of-type{
+        padding-bottom: 0px;
+    }
+
+
 
     .image .container {
         justify-content: center;
@@ -286,7 +304,7 @@ a{
 
     .image .container .text {
         width: 312px;
-        top: 60%;
+        top: 70%;
         left: 50%;
     }
 

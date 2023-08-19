@@ -64,17 +64,26 @@ body {
     padding-right: 1rem;
     border-radius: 0.25rem;
     transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
 }
 .nav .contain .nav-menu a:hover {
     color: var(--orange);
 }
+
+
 /*mobile*/
 @media (max-width: 767px) {
     .logo h1{
-        font-size: 15px;
+        font-size: 13px;
+    }
+    .nav{
+        width: 100%;
     }
     .nav .contain{
-        gap: 25px;
+        gap: 13px;
     }
     .nav .contain .nav-menu{
         margin-top: -8px;
@@ -83,6 +92,31 @@ body {
         font-size: 11px;
         padding-left: 2px;
         padding-right: 0.5rem;
+    }
+    .nav .contain .nav-menu .ch{
+        font-size: 15px;
+        width: max-content;
+        margin-left: -35px;
+        padding: 5px 5px;
+    }
+    .nav .ch li:first-of-type{
+        padding-bottom: 5px;
+    }
+    
+    #form {
+        margin-left: -20px;
+    }
+
+    #form > #btn {
+        width: 50px;
+        font-size: 15px;
+        padding-left: 6px;
+    }
+    #form > #disconnect-btn {
+        width: 65px;
+        font-size: 12px;
+        margin-left: 2px;
+        padding: 10px 3px;
     }
 }
 
@@ -104,6 +138,7 @@ body {
 
 /*Medium*/
 @media (min-width: 992px) and (max-width: 1200px) {
+    
     .nav .contain {
         gap: 0;
         justify-content: space-evenly;
