@@ -11,7 +11,7 @@
 }
 
 a {
-	text-decoration: none;
+	text-decoration:navajowhite;
 }
 
 li {
@@ -32,10 +32,9 @@ body {
     background-size: cover;
     font-family: 'Nunito', sans-serif;
     margin: 0;
-
+ width: 74%;
+  
 }
-
-
 
 
 /*Nav design*/
@@ -76,7 +75,7 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 280px;
+	width: 20%;
 	height: 100%;
 	background: var(--light);
 	z-index: 2000;
@@ -88,9 +87,7 @@ body {
 #sidebar::--webkit-scrollbar {
 	display: none;
 }
-#sidebar.hide {
-	width: 60px;
-}
+
 #sidebar .brand {
 	font-size: 24px;
 	font-weight: 700;
@@ -143,17 +140,7 @@ body {
 	box-shadow: 20px 20px 0 var(--grey);
 	z-index: -1;
 }
-#sidebar .side-menu li.active::after {
-	content: '';
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	bottom: -40px;
-	right: 0;
-	box-shadow: 20px -20px 0 var(--grey);
-	z-index: -1;
-}
+
 #sidebar .side-menu li a {
 	width: 100%;
 	height: 100%;
@@ -167,10 +154,7 @@ body {
 	overflow-x: hidden;
 }
 
-#sidebar.hide .side-menu li a {
-	width: calc(48px - (4px * 2));
-	transition: width .3s ease;
-}
+
 
 
 #sidebar .side-menu li a .bx {
@@ -183,9 +167,10 @@ body {
 /*mobile*/
 @media (max-width: 767px) {
     .nav .contain {
-        gap: 32px;
+        gap: 30%;
         width: 135%;
         justify-content: center;
+      
     }
 
     .nav .contain .logo {
@@ -229,8 +214,39 @@ body {
     }
 
     .image .container .text a {
+      
         font-size: 10px;
     }
+  
+
+#sidebar .brand {
+	font-size: 10px;
+
+}
+#sidebar img {
+	width: 25px;
+	height: 25px;
+	
+}
+
+#sidebar .side-menu {
+
+	margin-top: 30px;
+}
+#sidebar .side-menu li {
+	height: 30px;
+	
+	margin-left: 0px;
+	border-radius: 48px 0 0 48px;
+	padding: 0px;
+}
+
+#sidebar .side-menu li a {
+
+	font-size: 10px;
+}
+
+
 }
 
 /*Small*/
@@ -278,6 +294,34 @@ body {
     .image .container .text a {
         font-size: 15px;
     }
+    
+#sidebar .brand {
+	font-size: 15px;
+
+}
+#sidebar img {
+	width: 28px;
+	height: 28px;
+	
+}
+
+#sidebar .side-menu {
+
+	margin-top: 34px;
+}
+#sidebar .side-menu li {
+	height: 35px;
+	
+	margin-left: 0px;
+	border-radius: 48px 0 0 48px;
+	padding: 0px;
+}
+
+#sidebar .side-menu li a {
+
+	font-size: 15px;
+}
+
 }
 
 /*Medium*/
@@ -313,6 +357,34 @@ body {
         width: 400px;
         left: calc(50% - 250px);
     }
+    
+#sidebar .brand {
+	font-size: 18px;
+
+}
+#sidebar img {
+	width: 27px;
+	height: 27px;
+	
+}
+
+#sidebar .side-menu {
+
+	margin-top: 37px;
+}
+#sidebar .side-menu li {
+	height: 36px;
+	
+	margin-left: 0px;
+	border-radius: 48px 0 0 48px;
+	padding: 0px;
+}
+
+#sidebar .side-menu li a {
+
+	font-size: 18px;
+}
+
 }
 
 @media (min-width: 1200px) and (max-width: 1349px) {
