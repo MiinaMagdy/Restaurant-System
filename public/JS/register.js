@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Handle the response here (e.g., redirect to another page)
             console.log('Register successful:', response.data);
             localStorage.setItem('token', response.data.token);
-            window.location.href = "http://localhost:5500/views/home.html";
+            window.location.href = "http://localhost:3000/";
         } catch (error) {
             const errorElement = document.querySelector('.signup .container .form .error');
             errorElement.innerHTML = error.response.data.message;

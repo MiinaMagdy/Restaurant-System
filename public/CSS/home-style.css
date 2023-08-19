@@ -21,18 +21,26 @@ body {
     overflow: hidden;
 }
 
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
 /*Logo design*/
 .logo {
     color: var(--primary);
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
 .logo h1 {
-    font-size: 30px;
     font-weight: 900;
 }
-
-
 
 /*Nav design*/
 .nav .contain {
@@ -42,16 +50,23 @@ body {
     gap: 520px;
     align-items: center;
     justify-content: center;
+    padding-top: 5px;
+    margin-top: -5px;
     background-color: var(--dark);
 }
 
 .nav .contain .nav-menu {
     font-size: 1.25rem;
     font-weight: 700;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
     padding-bottom: 0.5rem;
+    position: relative;
 }
 
-.nav .contain .nav-menu a {
+.nav .contain .nav-menu li a {
     color: var(--light);
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -61,6 +76,52 @@ body {
 
 .nav .contain .nav-menu a:hover {
     color: var(--primary);
+}
+
+.nav .contain .ch{
+    display: none;
+    position: absolute;
+    background-color: var(--light);
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: -25px;
+    padding: 5px 15px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.nav .ch::before{
+    display: none;
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width:10px;
+    border-color: transparent transparent var(--light) transparent;
+    top: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.nav .ch li:first-of-type{
+    padding-bottom: 10px;
+}
+
+.nav .nav-menu .ch li a{
+    color: var(--dark);
+    font-size: 15px;
+}
+.nav .nav-menu .ch li a:hover{
+    cursor: pointer;
+}
+
+.nav .nav-menu .ch.active, .nav .nav-menu .ch.active::before{
+    display: block;
 }
 
 
@@ -338,4 +399,32 @@ body {
     .image .container .ani {
         left: 50%;
     }
+}
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.alert-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#closeAlert {
+    margin-top: 10px;
 }

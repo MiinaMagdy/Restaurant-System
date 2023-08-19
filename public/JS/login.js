@@ -14,11 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 email,
                 password
             });
+            console.log('Complete response:', response);
+
 
             // Handle the response here (e.g., redirect to another page)
             console.log('Login successful:', response.data);
-            localStorage.setItem('token', response.data.token);
-            window.location.href = "http://localhost:5500/views/home.html";
+            localStorage.setItem('token', response.data.result.token);
+            localStorage.setItem('userName', response.data.result.name);
+            localStorage.setItem('userRole', response.data.result.role);
+
+            window.location.href = "http://localhost:3000/";
         } catch (error) {
             const errorElement = document.querySelector('.login .container .form .error');
             errorElement.innerHTML = error.response.data.message;
