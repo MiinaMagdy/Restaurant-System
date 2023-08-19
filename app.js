@@ -53,34 +53,64 @@ const room2 = 'admin-client';
 io.on('connection', (socket) => {
   console.log('a user connected');
 
-  socket.on('new-user', (data) => {  // listens on new-user for new users and then assigns them to a room
+  socket.on('new-user', data => {  // listens on new-user for new users and then assigns them to a room
       console.log(`${data.name} just joined as ${data.role}`);
       users[socket.id] = data;
 
       if (data.role === 'admin' && data.whichRoom === '1') {
           socket.join(room1);
+          socket.broadcast.to(room1).emit('user-connected', data);
       } else if (data.role === 'admin' && data.whichRoom === '2') {
           socket.join(room2);
+          socket.broadcast.to(room2).emit('user-connected', data);
       } else if (data.role === 'staff') {
           socket.join(room1);
+          socket.broadcast.to(room1).emit('user-connected', data);
       } else if (data.role === 'client') {
           socket.join(room2);
+          socket.broadcast.to(room2).emit('user-connected', data);
       }
   });
 
-  socket.on(room1, (data) => { // listens on the room and then broadcasts the message for all room members except the sender
+  socket.on(room1, data => { // listens on the room and then broadcasts the message for all room members except the sender
       console.log(`message in ${room1}: ${data.message}`);
       socket.broadcast.to(room1).emit('chat message', data);
   });
 
-  socket.on(room2, (data) => { // listens on the room and then broadcasts the message for all room members except the sender
+  socket.on(room2, data => { // listens on the room and then broadcasts the message for all room members except the sender
       console.log(`message in ${room2}: ${data.message}`);
       socket.broadcast.to(room2).emit('chat message', data);
   });
 
   socket.on('disconnect', () => {
-      console.log('user disconnected');
-  });
+    console.log('user disconnected');
+    
+    // Get user data from the users object using socket.id
+    const user = users[socket.id];
+
+    
+    if (user) {
+        let roomToNotify;
+        
+        if (user.role === 'admin' && user.whichRoom === '1') {
+            roomToNotify = room1;
+        } else if (user.role === 'admin' && user.whichRoom === '2') {
+            roomToNotify = room2;
+        } else if (user.role === 'staff') {
+            roomToNotify = room1;
+        } else if (user.role === 'client') {
+            roomToNotify = room2;
+        }
+
+        if (roomToNotify) {
+            socket.broadcast.to(roomToNotify).emit('user-disconnected', user);
+            console.log(`${user.name} left the chat`);
+        }
+
+        // Remove the user from the users object
+        delete users[socket.id];
+    }
+});
 });
 
 // The NodeJS App is running on port 3000

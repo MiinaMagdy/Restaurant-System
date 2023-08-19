@@ -3,6 +3,7 @@ var socket = io();
 var messages = document.getElementById('messages');
 var form = document.getElementById('form');
 var input = document.getElementById('input');
+var disconnectBtn = document.getElementById('disconnect-btn');
 
 const userName = localStorage.getItem('userName');
 const userRole = localStorage.getItem('userRole');
@@ -12,11 +13,14 @@ console.log('Retrieved from localStorage:', userName, userRole);
 const room1 = 'admin-staff';
 const room2 = 'admin-client';
 
-let whichRoom = '';
+const whichRoom = localStorage.getItem('whichRoom');
+console.log('room choice is: ', whichRoom);
 
-if (userRole === 'admin') {  // admin is able to join both room so you have to choose one
-  whichRoom = prompt('Which room do you want to join? (1 for admin-staff, 2 for admin-client)');
-}
+const userData = {
+    name: userName,
+    role: userRole, 
+    whichRoom
+};
 
 // choosing a room to emit on
 const roomSelection = userRole === 'admin' ? (whichRoom === '1' ? room1 : room2) : (userRole === 'staff' ? room1 : room2);
@@ -27,19 +31,47 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
     var message = input.value;
     if (input.value) {
-        const data = {message, name: userName};
+        const data = {message, name: userName, role: userRole};
         socket.emit(roomSelection, data);
         appendMsg(userName, `${input.value}`, true);
         input.value = '';
     }
 });
 
-socket.on('chat message', data => {
-    appendMsg(data.name, `${data.message}`, false);
+disconnectBtn.addEventListener('click', function() {
+    // Manually disconnect the socket from the client side
+    socket.disconnect();
+
+    // Redirect to the home page after disconnecting
+    window.location.href = "/";
 });
 
-socket.on('user-connected', username => {
-    appendMsg(username, `${username} joined the chat`, false);
+
+socket.on('chat message', data => {
+    if(data.role === 'admin') {
+        appendMsg(data.name + ' (ADMIN)', `${data.message}`, false);
+    }
+    else {
+        appendMsg(data.name, `${data.message}`, false);
+    }
+});
+
+socket.on('user-connected', data => {
+    if(data.role === 'admin') {
+        appendMsg(data.name + ' (ADMIN)', `${data.name} joined the chat`, false);
+    }
+    else {
+        appendMsg(data.name, `${data.name} joined the chat`, false);
+    }
+});
+
+socket.on('user-disconnected', data => {
+    if(data.role === 'admin') {
+        appendMsg(data.name + ' (ADMIN)', `${data.name} left the chat`, false);
+    }
+    else {
+        appendMsg(data.name, `${data.name} left the chat`, false);
+    }
 });
 
 function appendMsg(senderName, msg, isSender) {
