@@ -25,8 +25,8 @@
             </a>
             <ul class="nav-menu">
                 <li><a href="/home">Home</a></li>
-                <li><a href="/menu">Menu</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/menu" id="menuLink">Menu</a></li>
+                <li><a href="/dashboard" id="dashboardLink">Dashboard</a></li>
                 <li><a class="chat chat-toggle">Chat</a>
                     <ul class="ch">
                         <li><a href="/chat" data-room="1">Staff Chat</a></li>
@@ -34,14 +34,14 @@
 
                     </ul>
                 </li>
-                <li><a href="/book">Book</a></li>
+                <li><a href="/book" id="bookLink">Book</a></li>
             </ul>
         </div>
     </div>
 
     <div class="custom-alert" id="customAlert">
         <div class="alert-content">
-            <p>Chat only available for signed-in users!</p>
+            <p>Only available for logged-in users!</p>
             <button id="closeAlert">Close</button>
         </div>
     </div>
@@ -58,7 +58,7 @@
                 <p class="animated moveInLeft">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
                     amet diam et eos. Clita erat
                     ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                <a class="animated moveInLeft" href="/book">Book Table</a>
+                <a class="animated moveInLeft" href="/book" id="bookTableBtn">Book Table</a>
                 <a class="animated moveInLeft" id="loginButton" href="/login">Login</a>
                 <span id="welcomeMessage" style="display: none;" class="hello">Hello, <span id="userName"></span></span>
             </div>
