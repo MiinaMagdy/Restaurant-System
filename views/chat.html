@@ -30,7 +30,7 @@
             <div class="nav-menu">
                 <a href="/">Home</a>
                 <a href="/menu">Menu</a>
-                <a href="/dashboard">Dashboard</a>
+                <a href="/dashboard" id="CdashboardLink">Dashboard</a>
                 <a href="/book">Book</a>
             </div>
         </div>
@@ -47,6 +47,18 @@
 
         <script src="/socket.io/socket.io.js"></script>
         <script src="JS/chat.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const userRole = localStorage.getItem('userRole');
+                const dashboardLink = document.getElementById('CdashboardLink');
+        
+                if (userRole !== 'admin') {
+                    dashboardLink.style.display = 'none';  // Hides the link and does not retain its layout space
+                }
+            });
+        </script>
+        
+        
 </body>
 
 </html>
