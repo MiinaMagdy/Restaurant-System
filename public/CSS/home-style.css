@@ -65,7 +65,23 @@ a{
     padding-bottom: 0.5rem;
     position: relative;
 }
-
+.nav .contain .nav-menu button{
+    display: none;
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
 .nav .contain .nav-menu li a {
     color: var(--light);
     text-decoration: none;
@@ -265,11 +281,11 @@ a{
 /*mobile*/
 @media (max-width: 767px) {
     .nav .contain {
-        gap: 20px;
+        gap: 0px;
     }
 
     .nav .contain .logo h1 {
-        font-size: 11px;
+        font-size: 10px;
     }
     .nav .contain .nav-menu{
         padding-left: 0;
@@ -318,6 +334,9 @@ a{
 
     .image .container .text a {
         font-size: 10px;
+    }
+    .nav .contain .nav-menu button{
+        padding: 2px;
     }
 }
 
