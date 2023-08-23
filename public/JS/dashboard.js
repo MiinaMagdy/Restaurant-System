@@ -10,14 +10,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(localStorage)
     
         // Handle the response here (e.g., redirect to another page)
-    
-        let {users} = response.data.message
-        const productList = document.getElementById('productList')
-        console.log(productList)
+          console.log(response);
+        let users = response.data.result
+        const usersList = document.querySelector('tbody')
+        console.log(usersList)
     
         for (let user of users) {
-            const div = `<div class="card"><img src="${user.image}" alt="Product Image"><div class="card-body"><h3 class="card-title">${cuisine.name}</h3><p>${cuisine.description}</p></div><p class="card-price">$${cuisine.price}</p></div>`
-            productList.innerHTML += div
+            const div = `<tr><td><img src="/images/avatars/defaultAvatar.png"><p>${user.fullname}</p></td><td>${user.email}</td><td><span class="status completed">${user.role}</span></td></tr>`
+            usersList.innerHTML += div
         }
-            
     });
+
+    /*
+      <tr>
+          <td>
+              <img src="/images/avatars/defaultAvatar.png">
+              <p>veronica</p>
+          </td>
+          <td>sunday 7 Am</td>
+          <td><span class="status completed">Completed</span></td>
+      </tr>
+    */

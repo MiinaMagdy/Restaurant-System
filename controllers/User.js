@@ -143,7 +143,7 @@ const deleteMyAvatar = async (req, res) => {
 const getAllUsers = async (req, res) => {
     console.log("Get all users");
     try {
-        const users = await User.find({ 'role': { $ne: 'admin' } });
+        const users = await User.find({});
         if (!users || users.length === 0)
             return sendResponse(res, 400, "No users found");
         return sendResponse(res, 200, "Get all users successfully", users);
